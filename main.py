@@ -10,12 +10,13 @@ from utils import Formatting
 from prompt import prompt
 from tuple import TupleGen
 
+NAME = "Modeler"
 MIN_FIELDS = 3
 MAX_FIELDS = 10
 
 
 class CmdPrompt(Cmd):
-    prompt = 'Modeler> '
+    prompt = NAME + '> '
     intro = 'Welcome to the MODELER! Use ? command to list commands'
 
     gen = None
@@ -41,7 +42,7 @@ class CmdPrompt(Cmd):
             print("3    [  Code Editor   ] -- (Name, Developer, Primary Language, Price)")
             return
 
-        self.gen = TupleGen(object, fields)
+        self.__set_model(object, fields)
         print(Formatting.format("Setting %r as the model..." % object, Formatting.GREEN))
 
     def do_new(self, object):
@@ -78,7 +79,7 @@ class CmdPrompt(Cmd):
 
         print("%s fields: %s" % (object, ', '.join(fields)))
 
-        self.gen = TupleGen(object, fields)
+        self.__set_model(object, fields)
 
     def do_add(self, input):
         '''Adds a new tuple to the store'''
@@ -131,6 +132,10 @@ class CmdPrompt(Cmd):
         for t in tuples:
             self.gen.print_tuple(t)
         print(Formatting.title("-----------------------------------"))
+
+    def __set_model(self, object, fields):
+        self.gen = TupleGen(object, fields)
+        self.prompt = "%s (%s)> " % (NAME, object)
 
 
 if __name__ == '__main__':
