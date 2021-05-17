@@ -10,6 +10,6 @@ class formatting:
     RED = '\033[91m'
 
 
-def format(message, formatting):
+def format_cmd(message, formatting):
     return formatting + message + '\033[0m'
 

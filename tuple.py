@@ -1,4 +1,5 @@
-from utils import *
+from prompt import prompt
+
 
 class TupleGen:
 
@@ -13,25 +14,12 @@ class TupleGen:
 
         field_responses = {}
         for field in self.fields:
-            field_responses[field] = self.__class__.__prompt(field)
+            field_responses[field] = prompt(field)
 
         new_tuple = self.__class__.__create_tuple(**field_responses)
 
         print(self.object + new_tuple.__str__())
         return new_tuple
-
-    @staticmethod
-    def __prompt(message) -> str:
-        # trim whitespace from ends
-        message = message.strip()
-
-        # Add ':' if missing
-        if message[-1] != ':':
-            message += ':'
-
-        message += ' '
-
-        return input(format(message, formatting.BOLD))
 
     @staticmethod
     def __create_tuple(**kwargs) -> tuple:
