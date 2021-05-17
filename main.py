@@ -84,7 +84,7 @@ class CmdPrompt(Cmd):
 
     def do_list(self, input):
         # TODO: formatting
-        print(self.tuple_list)
+        self.__print_tuple_list(self.tuple_list)
 
     def do_search(self, input):
         # TODO: find a tuple by search string
@@ -100,7 +100,13 @@ class CmdPrompt(Cmd):
             return
 
         found = list(filter(lambda search_tuple: TupleGen.tuple_matches_query(search_tuple, input), self.tuple_list))
-        print(found)
+
+        no_found = len(found)
+        if no_found == 0:
+            print("No tuples were found with that search string :(")
+        else:
+            print("Found %d tuple%s..." % (no_found, "s" if no_found > 1 else ""))
+            self.__print_tuple_list(found)
 
     def __has_model(self) -> bool:
         if self.gen is None:
@@ -114,6 +120,11 @@ class CmdPrompt(Cmd):
             return False
         return True
 
+    def __print_tuple_list(self, tuples):
+        print("--------[ Printing Tuples ]--------")
+        for t in tuples:
+            self.gen.print_tuple(t)
+        print("-----------------------------------")
 
 if __name__ == '__main__':
     CmdPrompt().cmdloop()

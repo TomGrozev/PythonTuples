@@ -17,9 +17,12 @@ class TupleGen:
             field_responses[field] = prompt(field)
 
         new_tuple = self.__class__.__create_tuple(**field_responses)
+        self.print_tuple(new_tuple)
 
-        print(self.object + new_tuple.__str__())
         return new_tuple
+
+    def print_tuple(self, in_tuple):
+        print("~~>  " + self.object + in_tuple.__str__())
 
     @staticmethod
     def tuple_matches_query(search_tuple, query) -> bool:
