@@ -22,6 +22,14 @@ class TupleGen:
         return new_tuple
 
     @staticmethod
+    def tuple_matches_query(search_tuple, query) -> bool:
+        query = query.lower()
+        for item in search_tuple:
+            if item.lower().startswith(query):
+                return True
+        return False
+
+    @staticmethod
     def __create_tuple(**kwargs) -> tuple:
         ordered_vals = kwargs.values()
         return tuple(ordered_vals)

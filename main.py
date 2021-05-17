@@ -12,14 +12,13 @@ from tuple import TupleGen
 MIN_FIELDS = 3
 MAX_FIELDS = 10
 
-TUPLE_LIST = []
-
 
 class CmdPrompt(Cmd):
     prompt = 'Modeler> '
     intro = 'Welcome to the MODELER! Use ? command to list commands'
 
     gen = None
+    tuple_list = []
 
     def do_exit(self, input):
         print("Exiting...")
@@ -58,30 +57,44 @@ class CmdPrompt(Cmd):
 
     def do_add(self, input):
         '''Adds a new tuple to the store'''
-        if self.gen == None:
-            print("No model set. Set using the 'new' command.")
+        if not self.__has_model():
             return
 
-        add_tuple(self.gen)
+        new_tuple = self.gen.new()
+        self.tuple_list.append(new_tuple)
 
     def do_list(self, input):
         # TODO: formatting
-        print(TUPLE_LIST)
+        print(self.tuple_list)
 
     def do_search(self, input):
         # TODO: find a tuple by search string
+        if not self.__has_model():
+            return
+
+        if not self.__has_tuples():
+            return
+
         if input == "":
             print("No search term provided.\nUse as 'search bob' where bob is the search term (case insensitive).")
             return
 
-        if len(TUPLE_LIST) == 0:
+        found = list(filter(lambda search_tuple: TupleGen.tuple_matches_query(search_tuple, input), self.tuple_list))
+        print(found)
+
+    def __has_model(self) -> bool:
+        if self.gen is None:
+            print("No model set. Create one using the 'new' command.")
+            return False
+        return True
+
+    def __has_tuples(self) -> bool:
+        if len(self.tuple_list) == 0:
             print("No tuples stored. Please add one using the 'add' command.")
-            return
+            return False
+        return True
 
 
-def add_tuple(gen):
-    new_tuple = gen.new()
-    TUPLE_LIST.append(new_tuple)
 
 
 if __name__ == '__main__':
