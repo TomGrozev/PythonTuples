@@ -23,3 +23,7 @@ class Formatting:
     @staticmethod
     def title(message: str) -> str:
         return Formatting.format(message, [Formatting.YELLOW, Formatting.BOLD])
+
+
+def capitalise_str(string):
+    return " ".join([word.capitalize() for word in string.split(" ")])

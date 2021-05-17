@@ -6,7 +6,7 @@ Name, Author, Version, Description
 
 from cmd import Cmd
 
-from utils import Formatting
+from utils import Formatting, capitalise_str
 from prompt import prompt
 from tuple import TupleGen
 
@@ -51,7 +51,7 @@ class CmdPrompt(Cmd):
             # prompt for object
             object = prompt("Type of object")
 
-        object = object.upper()
+        object = capitalise_str(object)
 
         # prompt for field list
         print("Please enter the fields, this model will have (min %d, max %d)." % (MIN_FIELDS, MAX_FIELDS))
@@ -68,7 +68,7 @@ class CmdPrompt(Cmd):
                 else:
                     break
 
-            field = field.upper()
+            field = capitalise_str(field)
             # prevent duplicate field names
             if field in fields:
                 print(Formatting.error("A field with name %r already exists" % field))
@@ -77,7 +77,7 @@ class CmdPrompt(Cmd):
             fields.append(field)
             i += 1
 
-        print("%s fields: %s" % (object, ', '.join(fields)))
+        print(Formatting.format("\n%s" % object, Formatting.BOLD) + " fields: %s" % ', '.join(fields))
 
         self.__set_model(object, fields)
 
