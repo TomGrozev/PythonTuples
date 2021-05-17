@@ -19,3 +19,7 @@ class Formatting:
     @staticmethod
     def error(message: str) -> str:
         return Formatting.format(message, [Formatting.RED, Formatting.BOLD])
+
+    @staticmethod
+    def title(message: str) -> str:
+        return Formatting.format(message, [Formatting.YELLOW, Formatting.BOLD])

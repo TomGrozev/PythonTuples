@@ -103,9 +103,9 @@ class CmdPrompt(Cmd):
 
         no_found = len(found)
         if no_found == 0:
-            print("No tuples were found with that search string :(")
+            print(Formatting.error("No tuples were found with that search string :("))
         else:
-            print("Found %d tuple%s..." % (no_found, "s" if no_found > 1 else ""))
+            print(Formatting.format("Found %d tuple%s..." % (no_found, "s" if no_found > 1 else ""), Formatting.GREEN))
             self.__print_tuple_list(found)
 
     def __has_model(self) -> bool:
@@ -121,10 +121,11 @@ class CmdPrompt(Cmd):
         return True
 
     def __print_tuple_list(self, tuples):
-        print("--------[ Printing Tuples ]--------")
+        print(Formatting.title("--------[ Printing Tuples ]--------"))
         for t in tuples:
             self.gen.print_tuple(t)
-        print("-----------------------------------")
+        print(Formatting.title("-----------------------------------"))
+
 
 if __name__ == '__main__':
     CmdPrompt().cmdloop()
