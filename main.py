@@ -26,17 +26,23 @@ class CmdPrompt(Cmd):
         return True
 
     def do_use(self, input):
+        object = fields = None
+
         if input == '1':
-            self.gen = TupleGen("Python Package", ['Name', 'Author', 'Version', 'Description'])
+            object, fields = ("Python Package", ['Name', 'Author', 'Version', 'Description'])
         elif input == '2':
-            self.gen = TupleGen("Fruit", ['Name', 'Colour', 'Flavour'])
+            object, fields = ("Fruit", ['Name', 'Colour', 'Flavour'])
         elif input == '3':
-            self.gen = TupleGen("Code Editor", ['Name', 'Developer', 'Primary Language', 'Price'])
+            object, fields = ("Code Editor", ['Name', 'Developer', 'Primary Language', 'Price'])
         else:
             print("Please select one of the following by using 'use 1' to use example 1.")
             print("1    [ Python Package ] -- (Name, Author, Version, Description)")
             print("2    [      Fruit     ] -- (Name, Colour, Flavour)")
             print("3    [  Code Editor   ] -- (Name, Developer, Primary Language, Price)")
+            return
+
+        self.gen = TupleGen(object, fields)
+        print(Formatting.format("Setting %r as the model..." % object, Formatting.GREEN))
 
     def do_new(self, object):
         '''Creates a new model'''
