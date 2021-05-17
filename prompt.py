@@ -1,4 +1,4 @@
-from utils import *
+from utils import Formatting
 
 
 def prompt(message) -> str:
@@ -11,4 +11,4 @@ def prompt(message) -> str:
 
     message += ' '
 
-    return input(format_cmd(message, formatting.BOLD))
+    return input(Formatting.format(message, Formatting.BOLD))

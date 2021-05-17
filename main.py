@@ -6,6 +6,7 @@ Name, Author, Version, Description
 
 from cmd import Cmd
 
+from utils import Formatting
 from prompt import prompt
 from tuple import TupleGen
 
@@ -42,7 +43,7 @@ class CmdPrompt(Cmd):
 
             if field == 'q':
                 if i <= MIN_FIELDS:
-                    print("Must have at least %d fields" % MIN_FIELDS)
+                    print(Formatting.error("Must have at least %d fields" % MIN_FIELDS))
                     continue
                 else:
                     break
@@ -50,7 +51,7 @@ class CmdPrompt(Cmd):
             field = field.upper()
             # prevent duplicate field names
             if field in fields:
-                print("A field with name %r already exists" % field)
+                print(Formatting.error("A field with name %r already exists" % field))
                 continue
 
             fields.append(field)
@@ -59,7 +60,6 @@ class CmdPrompt(Cmd):
         print("%s fields: %s" % (object, ', '.join(fields)))
 
         self.gen = TupleGen(object, fields)
-
 
     def do_add(self, input):
         '''Adds a new tuple to the store'''
@@ -82,7 +82,8 @@ class CmdPrompt(Cmd):
             return
 
         if input == "":
-            print("No search term provided.\nUse as 'search bob' where bob is the search term (case insensitive).")
+            print(Formatting.error(
+                "No search term provided.\nUse as 'search bob' where bob is the search term (case insensitive)."))
             return
 
         found = list(filter(lambda search_tuple: TupleGen.tuple_matches_query(search_tuple, input), self.tuple_list))
@@ -90,17 +91,15 @@ class CmdPrompt(Cmd):
 
     def __has_model(self) -> bool:
         if self.gen is None:
-            print("No model set. Create one using the 'new' command.")
+            print(Formatting.error("No model set. Create one using the 'new' command."))
             return False
         return True
 
     def __has_tuples(self) -> bool:
         if len(self.tuple_list) == 0:
-            print("No tuples stored. Please add one using the 'add' command.")
+            print(Formatting.error("No tuples stored. Please add one using the 'add' command."))
             return False
         return True
-
-
 
 
 if __name__ == '__main__':

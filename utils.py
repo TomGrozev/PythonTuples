@@ -1,4 +1,4 @@
-class formatting:
+class Formatting:
     BOLD = '\033[1m'
     UNDERLINE = '\033[4m'
     PURPLE = '\033[95m'
@@ -9,7 +9,13 @@ class formatting:
     YELLOW = '\033[93m'
     RED = '\033[91m'
 
+    @staticmethod
+    def format(message: str, formatting: str or list) -> str:
+        if isinstance(formatting, list):
+            formatting = ''.join(formatting)
 
-def format_cmd(message, formatting):
-    return formatting + message + '\033[0m'
+        return formatting + message + '\033[0m'
 
+    @staticmethod
+    def error(message: str) -> str:
+        return Formatting.format(message, [Formatting.RED, Formatting.BOLD])
