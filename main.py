@@ -6,32 +6,63 @@ Name, Author, Version, Description
 
 from cmd import Cmd
 
+from prompt import prompt
 from tuple import TupleGen
 
-TUPLE_LIST = []
+MIN_FIELDS = 3
+MAX_FIELDS = 10
 
-gen = TupleGen("Package", ['NAME', 'AUTHOR', 'VERSION', 'DESCRIPTION'])
+TUPLE_LIST = []
 
 
 class CmdPrompt(Cmd):
     prompt = 'Modeler> '
     intro = 'Welcome to the MODELER! Use ? command to list commands'
 
+    gen = None
+
     def do_exit(self, input):
         print("Exiting...")
         return True
 
-    def do_new(self, input):
+    def do_new(self, object):
         '''Creates a new model'''
-        if input == "":
-            # TODO: prompt for object
-            pass
+        if object == "":
+            # prompt for object
+            object = prompt("Type of object")
 
-        # TODO: prompt for field list
+        object = object.upper()
+
+        # prompt for field list
+        print("Please enter the fields, this model will have (min %d, max %d)." % (MIN_FIELDS, MAX_FIELDS))
+        print("To finish entering fields enter 'q'.")
+        fields = []
+        i = 1
+        while i <= MAX_FIELDS:
+            field = prompt("Field %d name" % i)
+
+            if field == 'q':
+                if i <= MIN_FIELDS:
+                    print("Must have at least %d fields" % MIN_FIELDS)
+                    continue
+                else:
+                    break
+
+            fields.append(field.upper())
+            i += 1
+
+        print("%s fields: %s" % (object, ', '.join(fields)))
+
+        self.gen = TupleGen(object, fields)
+
 
     def do_add(self, input):
         '''Adds a new tuple to the store'''
-        add_tuple(gen)
+        if self.gen == None:
+            print("No model set. Set using the 'new' command.")
+            return
+
+        add_tuple(self.gen)
 
     def do_list(self, input):
         # TODO: formatting
