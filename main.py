@@ -47,7 +47,13 @@ class CmdPrompt(Cmd):
                 else:
                     break
 
-            fields.append(field.upper())
+            field = field.upper()
+            # prevent duplicate field names
+            if field in fields:
+                print("A field with name %r already exists" % field)
+                continue
+
+            fields.append(field)
             i += 1
 
         print("%s fields: %s" % (object, ', '.join(fields)))
