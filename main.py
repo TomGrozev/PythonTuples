@@ -77,7 +77,8 @@ class CmdPrompt(Cmd):
             fields.append(field)
             i += 1
 
-        print(Formatting.format("\n%s" % object, Formatting.BOLD) + " fields: %s" % ', '.join(fields))
+        print(Formatting.format("\n%s fields: " % object, [Formatting.BOLD, Formatting.GREEN])
+              + "%s" % ', '.join(fields))
 
         self.__set_model(object, fields)
 
