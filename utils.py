@@ -25,8 +25,9 @@ class Formatting:
         return Formatting.format(message, [Formatting.YELLOW, Formatting.BOLD])
 
 
-def capitalise_str(string):
-    return " ".join([word.capitalize() for word in string.split(" ")])
+def format_model_name(string):
+    return "".join([word.capitalize() for word in string.split(" ")])
+
 
 def prompt(message) -> str:
     # trim whitespace from ends
@@ -39,3 +40,8 @@ def prompt(message) -> str:
     message += ' '
 
     return input(Formatting.format(message, Formatting.BOLD))
+
+
+def print_model(model: str):
+    print(Formatting.format("~~>  ", [Formatting.BOLD, Formatting.CYAN]) + Formatting.format(model,
+                                                                                             Formatting.CYAN))

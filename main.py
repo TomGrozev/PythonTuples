@@ -6,12 +6,18 @@ Name, Author, Version, Description
 
 from cmd import Cmd
 
-from utils import Formatting, capitalise_str, prompt
-from tuple import TupleGen, TupleStore
+from gen import Generator
+from storage import Store
+from storage.tuple_store import TupleStore
+from utils import Formatting, format_model_name, prompt
+from gen.tuple_gen import TupleGen
 
 NAME = "Modeler"
 MIN_FIELDS = 3
 MAX_FIELDS = 10
+
+store_class: Store.__class__ = TupleStore
+gen_class: Generator.__class__ = TupleGen
 
 
 class CmdPrompt(Cmd):
@@ -19,7 +25,9 @@ class CmdPrompt(Cmd):
     intro = 'Welcome to the MODELER! Use ? command to list commands'
 
     gen = None
-    tuple_list = TupleStore()
+
+    # TODO: Set store
+    store = None
 
     def do_exit(self, _user_input):
         print("Exiting...")
@@ -50,11 +58,12 @@ class CmdPrompt(Cmd):
             # prompt for object
             model_object = prompt("Type of object")
 
-        model_object = capitalise_str(model_object)
+        model_object = format_model_name(model_object)
 
         # prompt for field list
         print("Please enter the fields, this model will have (min %d, max %d)." % (MIN_FIELDS, MAX_FIELDS))
         print("To finish entering fields enter 'q'.")
+
         fields = []
         i = 1
         while i <= MAX_FIELDS:
@@ -67,7 +76,7 @@ class CmdPrompt(Cmd):
                 else:
                     break
 
-            field = capitalise_str(field)
+            field = format_model_name(field)
             # prevent duplicate field names
             if field in fields:
                 print(Formatting.error("A field with name %r already exists" % field))
@@ -86,15 +95,13 @@ class CmdPrompt(Cmd):
         if not self.__has_model():
             return
 
-        new_tuple = self.gen.new()
-        self.tuple_list.append(new_tuple)
+        new_item = self.gen.new()
+        self.store.append(new_item)
 
     def do_list(self, _user_input):
-        # TODO: formatting
-        self.tuple_list.print()
+        self.store.print()
 
     def do_search(self, user_input):
-        # TODO: find a tuple by search string
         if not self.__has_model():
             return
 
@@ -103,24 +110,25 @@ class CmdPrompt(Cmd):
                 "No search term provided.\nUse as 'search bob' where bob is the search term (case insensitive)."))
             return
 
-        found: TupleStore = self.tuple_list.find_tuples(user_input)
+        found: store_class = self.store.search(user_input)
 
         no_found = len(found)
         if no_found == 0:
-            print(Formatting.error("No tuples were found with that search string :("))
+            print(Formatting.error("No items were found with that search string :("))
         else:
-            print(Formatting.format("Found %d tuple%s..." % (no_found, "s" if no_found > 1 else ""), Formatting.GREEN))
+            print(Formatting.format("Found %d item%s..." % (no_found, "s" if no_found > 1 else ""), Formatting.GREEN))
             found.print()
 
     def __has_model(self) -> bool:
-        if self.gen is None:
+        if self.gen is None or self.store is None:
             print(Formatting.error("No model set. Create one using the 'new' command."))
             return False
         return True
 
     def __set_model(self, object, fields):
-        self.gen = TupleGen(object, fields)
-        self.tuple_list = TupleStore(object=object)
+        self.gen = gen_class(object, fields)
+        self.store = store_class(object=object)
+
         self.prompt = "%s (%s)> " % (NAME, object)
 
 
