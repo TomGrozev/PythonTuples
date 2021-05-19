@@ -12,3 +12,7 @@ class ClassStore(Store):
 
     def __singular__(self, item):
         return item.__str__()
+
+    def __update_search__(self, item):
+        item.searched += 1
+        return item

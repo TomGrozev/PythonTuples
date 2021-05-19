@@ -1,6 +1,8 @@
 
 class Model(object):
 
+    searched = 0
+
     def __init__(self, **kwargs) -> None:
         super().__init__()
 

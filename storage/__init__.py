@@ -10,7 +10,12 @@ class Store(list):
 
     def search(self, query):
         query = query.lower()
-        return self.__class__(self.object, filter(lambda item: self.__search_comparator__(item, query), self))
+        found = filter(lambda item: self.__search_comparator__(item, query), self)
+
+        # update searched
+        found = map(self.__update_search__, found)
+
+        return self.__class__(self.object, found)
 
     def print(self):
         if len(self) == 0:
@@ -27,3 +32,7 @@ class Store(list):
 
     def __singular__(self, item):
         return item.__str__()
+
+    def __update_search__(self, item):
+        # Don't update, no known storage structure
+        return item
