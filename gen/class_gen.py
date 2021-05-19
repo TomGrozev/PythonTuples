@@ -1,13 +1,10 @@
 from gen import Generator
+from model import Model
 
 
-class TupleGen(Generator):
-    out_tupe = tuple
+class ClassGen(Generator):
+    out_tupe = Model.__class__
 
-    def __singular__(self, item):
-        return self.object + item.__str__()
-
-    @staticmethod
-    def __generator__(**kwargs) -> tuple:
-        ordered_vals = kwargs.values()
-        return tuple(ordered_vals)
+    def __generator__(self, **kwargs) -> Model:
+        cls = type(self.object, (Model,), {})
+        return cls(**kwargs)
