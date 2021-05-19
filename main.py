@@ -37,16 +37,16 @@ class CmdPrompt(Cmd):
         model_object = fields = None
 
         if user_input == '1':
-            model_object, fields = ("Python Package", ['Name', 'Author', 'Version', 'Description'])
+            model_object, fields = ("PythonPackage", ['Name', 'Author', 'Version', 'Description'])
         elif user_input == '2':
             model_object, fields = ("Fruit", ['Name', 'Colour', 'Flavour'])
         elif user_input == '3':
-            model_object, fields = ("Code Editor", ['Name', 'Developer', 'Primary Language', 'Price'])
+            model_object, fields = ("CodeEditor", ['Name', 'Developer', 'Primary Language', 'Price'])
         else:
             print("Please select one of the following by using 'use 1' to use example 1.")
-            print("1    [ Python Package ] -- (Name, Author, Version, Description)")
+            print("1    [ PythonPackage ] -- (Name, Author, Version, Description)")
             print("2    [      Fruit     ] -- (Name, Colour, Flavour)")
-            print("3    [  Code Editor   ] -- (Name, Developer, Primary Language, Price)")
+            print("3    [  CodeEditor   ] -- (Name, Developer, Primary Language, Price)")
             return
 
         self.__set_model(model_object, fields)
