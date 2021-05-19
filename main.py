@@ -7,7 +7,9 @@ Name, Author, Version, Description
 from cmd import Cmd
 
 from gen import Generator
+from gen.class_gen import ClassGen
 from storage import Store
+from storage.class_store import ClassStore
 from storage.tuple_store import TupleStore
 from utils import Formatting, format_model_name, prompt
 from gen.tuple_gen import TupleGen
@@ -16,8 +18,8 @@ NAME = "Modeler"
 MIN_FIELDS = 3
 MAX_FIELDS = 10
 
-store_class: Store.__class__ = TupleStore
-gen_class: Generator.__class__ = TupleGen
+store_class: Store.__class__ = None
+gen_class: Generator.__class__ = None
 
 
 class CmdPrompt(Cmd):
@@ -133,4 +135,17 @@ class CmdPrompt(Cmd):
 
 
 if __name__ == '__main__':
+    while True:
+        print("How would you like to store models? (1) Tuples or (2) Classes")
+        choice = input("Storage Method: ")
+        if choice == '1':
+            store_class = TupleStore
+            gen_class = TupleGen
+            break
+        elif choice == '2':
+            store_class = ClassStore
+            gen_class = ClassGen
+            break
+        # Otherwise keeps asking
+
     CmdPrompt().cmdloop()
