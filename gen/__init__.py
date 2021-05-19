@@ -26,6 +26,5 @@ class Generator(object):
     def __singular__(self, item):
         return item.__str__()
 
-    @staticmethod
-    def __generator__(**kwargs) -> out_type:
+    def __generator__(self, **kwargs) -> out_type:
         return kwargs
