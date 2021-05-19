@@ -1,0 +1,67 @@
+Script started on 2021-05-20 00:48:46+10:00 [TERM="rxvt-unicode-256color" TTY="/dev/pts/0" COLUMNS="81" LINES="39"]
+[m[49m[39m[27m[24m[1m[7m%[27m[1m[m                                                                                [m[49m[39m[27m[24m[K
+
+[2A7[m[49m[39m[38;5;240m╭─[m[38;5;240m[49m[38;5;0m [m[38;5;0m[49m[38;5;31m/[1m[38;5;31m[38;5;39mmnt[m[38;5;39m[49m[38;5;31m/Dev/Uni/Computer_Lanages_And_Algorithms/[1m[38;5;31m[38;5;39mPythonTuples[m[38;5;39m[49m[38;5;31m[m[38;5;31m[49m[38;5;31m[m[38;5;31m[49m[38;5;0m[m[38;5;0m[49m[39m            [m[49m[38;5;66m00:48:46[m[38;5;66m[49m[38;5;66m[m[38;5;66m[49m[38;5;66m[m[38;5;66m[49m[39m
+[38;5;240m╰─[m[38;5;240m[49m[38;5;76m❯[m[38;5;76m[49m[38;5;76m[m[38;5;76m[49m[38;5;0m[m[38;5;0m[49m[39m [m[49m[39m[?25l8[m[49m[39m[27m[24m[J]2;user@uni-dev:/mnt/Dev/Uni/Computer_Lanages_And_Algorithms/PythonTuples]1;../PythonTuples[m[38;5;31m[49m[39m[27m[24m[1m[7m%[27m[1m[m                                                                                [m[49m[39m[27m[24m[K[m[27m[24m[J[m[49m[39m
+[A[38;5;240m╭─[m[38;5;240m[49m[38;5;0m [m[38;5;0m[49m[38;5;31m/[1m[38;5;31m[38;5;39mmnt[m[38;5;39m[49m[38;5;31m/[38;5;103mD[m[38;5;103m[49m[38;5;31m/[38;5;103mU[m[38;5;103m[49m[38;5;31m/[38;5;103mComputer_Lana[m[38;5;103m[49m[38;5;31m/[1m[38;5;31m[38;5;39mPythonTuples[m[38;5;39m[49m[38;5;31m[m[38;5;31m[49m[38;5;31m[m[38;5;31m[49m [m[38;5;31m[49m[38;5;0mloading[m[38;5;0m[49m[38;5;0m[m[38;5;0m[49m[38;5;0m[m[38;5;0m[49m[39m           [m[49m[38;5;37m PythonTuples[m[38;5;37m[49m[38;5;37m[m[38;5;37m[49m[38;5;37m[m[38;5;37m[49m[38;5;66m 00:48:46[m[38;5;66m[49m[38;5;66m[m[38;5;66m[49m[38;5;66m[m[38;5;66m[49m[39m
+[38;5;240m╰─[m[38;5;240m[49m[38;5;76m❯[m[38;5;76m[49m[38;5;76m[m[38;5;76m[49m[38;5;0m[m[38;5;0m[49m[39m [m[49m[39m[K=[?12l[?25h[?2004h[?25l[A[m[27m[24m[J[m[49m[39m
+[A[38;5;240m╭─[m[38;5;240m[49m[38;5;0m [m[38;5;0m[49m[38;5;31m/[1m[38;5;31m[38;5;39mmnt[m[38;5;39m[49m[38;5;31m/[38;5;103mD[m[38;5;103m[49m[38;5;31m/[38;5;103mU[m[38;5;103m[49m[38;5;31m/[38;5;103mComputer_Lana[m[38;5;103m[49m[38;5;31m/[1m[38;5;31m[38;5;39mPythonTuples[m[38;5;39m[49m[38;5;31m[m[38;5;31m[49m[38;5;31m[m[38;5;31m[49m [m[38;5;31m[49m[38;5;0m[38;5;244m[38;5;244mmaster [38;5;244m⇡5[m[38;5;244m[49m[38;5;0m[m[38;5;0m[49m[38;5;0m[m[38;5;0m[49m[39m         [m[49m[38;5;37m PythonTuples[m[38;5;37m[49m[38;5;37m[m[38;5;37m[49m[38;5;37m[m[38;5;37m[49m[38;5;66m 00:48:46[m[38;5;66m[49m[38;5;66m[m[38;5;66m[49m[38;5;66m[m[38;5;66m[49m[39m
+[38;5;240m╰─[m[38;5;240m[49m[38;5;76m❯[m[38;5;76m[49m[38;5;76m[m[38;5;76m[49m[38;5;0m[m[38;5;0m[49m[39m [m[49m[39m[K[?12l[?25h[?25l[A[m[27m[24m[J[m[49m[39m
+[A[38;5;240m╭─[m[38;5;240m[49m[38;5;0m [m[38;5;0m[49m[38;5;31m/[1m[38;5;31m[38;5;39mmnt[m[38;5;39m[49m[38;5;31m/[38;5;103mD[m[38;5;103m[49m[38;5;31m/[38;5;103mU[m[38;5;103m[49m[38;5;31m/[38;5;103mComputer_Lana[m[38;5;103m[49m[38;5;31m/[1m[38;5;31m[38;5;39mPythonTuples[m[38;5;39m[49m[38;5;31m[m[38;5;31m[49m[38;5;31m[m[38;5;31m[49m [m[38;5;31m[49m[38;5;76m[38;5;76m[38;5;76mmaster [38;5;76m⇡5 [38;5;39m?1[m[38;5;39m[49m[38;5;76m[m[38;5;76m[49m[38;5;0m[m[38;5;0m[49m[39m      [m[49m[38;5;37m PythonTuples[m[38;5;37m[49m[38;5;37m[m[38;5;37m[49m[38;5;37m[m[38;5;37m[49m[38;5;66m 00:48:46[m[38;5;66m[49m[38;5;66m[m[38;5;66m[49m[38;5;66m[m[38;5;66m[49m[39m
+[38;5;240m╰─[m[38;5;240m[49m[38;5;76m❯[m[38;5;76m[49m[38;5;76m[m[38;5;76m[49m[38;5;0m[m[38;5;0m[49m[39m [m[49m[39m[K[?12l[?25h[32mp[39m[38;5;8mwd[39m[1m[31mp[1m[31my[m[39m[38;5;8mt[38;5;8mhon3 app.py[39m[12D[1m[31mp[1m[31my[1m[31mt[m[39m[1m[31mt[1m[31mh[m[39m[1m[31mh[1m[31mo[m[39m[m[32mp[m[32my[m[32mt[m[32mh[m[32mo[32mn[39m[32mn[32m3[39m[39m [39m[4mm[24m[39m [39m [39m [39m [39m [4mm[4ma[24m[4ma[4mi[24m[4mi[4mn[24m[4mn[4m.[24m[4m.[4mp[24m[4mp[4my[24m>[?25l[?2004l[A[m[27m[24m[J[m[49m[27m[24m[38;5;76m❯[m[38;5;76m[49m[39m[27m[24m [32mpython3[39m [4mmain.py[24m[K[?12l[?25h
+]2;python3 main.py]1;python3How would you like to store models? (1) Tuples or (2) Classes
+[1mStorage Method: [0m1
+[92m[1m
+Welcome to the Modeler!
+[0mUse ? command to list commands.
+Before adding items, you must create a model using the 'new' command.
+You can use some example models by using the 'use' command.
+[1mModeler> [0muse 1
+[92mSetting 'PythonPackage' as the model...[0m
+[1mModeler [0m[1m[95m(PythonPackage)[0m[1m> [0madd
+[93m[1m---------[ New PythonPackage ]---------[0m
+[1mName: [0mBob
+[1mAuthor: [0mBob Bob
+[1mVersion: [0m1.0
+[1mDescription: [0mHello my first package
+
+[1m[96m~~>  [0m[96mPythonPackage('Bob', 'Bob Bob', '1.0', 'Hello my first package')[0m
+[1mModeler [0m[1m[95m(PythonPackage)[0m[1m> [0mlist
+[93m[1m--------[ Printing Tuple Items ]--------[0m
+[1m[96m~~>  [0m[96mPythonPackage('Bob', 'Bob Bob', '1.0', 'Hello my first package')[0m
+[93m[1m-----------------------------------[0m
+[1mModeler [0m[1m[95m(PythonPackage)[0m[1m> [0msearch[K[K[K[K[K[Kadd
+[93m[1m---------[ New PythonPackage ]---------[0m
+[1mName: [0mMcGee
+[1mAuthor: [0mMcGee Bob
+[1mVersion: [0m2.0
+[1mDescription: [0mNope
+
+[1m[96m~~>  [0m[96mPythonPackage('McGee', 'McGee Bob', '2.0', 'Nope')[0m
+[1mModeler [0m[1m[95m(PythonPackage)[0m[1m> [0msearch M[Km
+[92mFound 1 item...[0m
+[93m[1m--------[ Printing Tuple Items ]--------[0m
+[1m[96m~~>  [0m[96mPythonPackage('McGee', 'McGee Bob', '2.0', 'Nope')[0m
+[93m[1m-----------------------------------[0m
+[1mModeler [0m[1m[95m(PythonPackage)[0m[1m> [0msearch b
+[92mFound 1 item...[0m
+[93m[1m--------[ Printing Tuple Items ]--------[0m
+[1m[96m~~>  [0m[96mPythonPackage('Bob', 'Bob Bob', '1.0', 'Hello my first package')[0m
+[93m[1m-----------------------------------[0m
+[1mModeler [0m[1m[95m(PythonPackage)[0m[1m> [0mclear
+[1m[92mStore cleared.[0m
+[1mModeler [0m[1m[95m(PythonPackage)[0m[1m> [0mlist
+[91m[1mStorage Empty. Add an item using the 'add' command.[0m
+[1mModeler [0m[1m[95m(PythonPackage)[0m[1m> [0msearch b
+[91m[1mNo items were found with that search string :([0m
+[1mModeler [0m[1m[95m(PythonPackage)[0m[1m> [0mexit
+[91m[1mExiting...[0m
+[1m[7m%[27m[1m[m                                                                                 ]2;user@uni-dev:/mnt/Dev/Uni/Computer_Lanages_And_Algorithms/PythonTuples]1;../PythonTuples[m[27m[24m[J[m[49m[39m
+
+[A[38;5;240m╭─[m[38;5;240m[49m[38;5;0m [m[38;5;0m[49m[38;5;31m/[1m[38;5;31m[38;5;39mmnt[m[38;5;39m[49m[38;5;31m/[38;5;103mD[m[38;5;103m[49m[38;5;31m/[38;5;103mU[m[38;5;103m[49m[38;5;31m/[38;5;103mComputer_Lana[m[38;5;103m[49m[38;5;31m/[1m[38;5;31m[38;5;39mPythonTuples[m[38;5;39m[49m[38;5;31m[m[38;5;31m[49m[38;5;31m[m[38;5;31m[49m [m[38;5;31m[49m[38;5;0m[38;5;244m[38;5;244mmaster [38;5;244m⇡5 [38;5;244m?1[m[38;5;244m[49m[38;5;0m[m[38;5;0m[49m[38;5;0m[m[38;5;0m[49m[39m
+[38;5;240m╰─[m[38;5;240m[49m[38;5;76m❯[m[38;5;76m[49m[38;5;76m[m[38;5;76m[49m[38;5;0m[m[38;5;0m[49m[39m [m[49m[39m[K=[?2004h[?25l[A[A[m[27m[24m[J[m[49m[39m
+
+[A[38;5;240m╭─[m[38;5;240m[49m[38;5;0m [m[38;5;0m[49m[38;5;31m/[1m[38;5;31m[38;5;39mmnt[m[38;5;39m[49m[38;5;31m/[38;5;103mD[m[38;5;103m[49m[38;5;31m/[38;5;103mU[m[38;5;103m[49m[38;5;31m/[38;5;103mComputer_Lana[m[38;5;103m[49m[38;5;31m/[1m[38;5;31m[38;5;39mPythonTuples[m[38;5;39m[49m[38;5;31m[m[38;5;31m[49m[38;5;31m[m[38;5;31m[49m [m[38;5;31m[49m[38;5;76m[38;5;76m[38;5;76mmaster [38;5;76m⇡5 [38;5;39m?1[m[38;5;39m[49m[38;5;76m[m[38;5;76m[49m[38;5;0m[m[38;5;0m[49m[39m
+[38;5;240m╰─[m[38;5;240m[49m[38;5;76m❯[m[38;5;76m[49m[38;5;76m[m[38;5;76m[49m[38;5;0m[m[38;5;0m[49m[39m [m[49m[39m[K[?12l[?25h[1m[31me[m[39m[38;5;8mcho $PATH[39m[9D[m[32me[32mx[39m[39m [39m [39m [39m [39m [39m [39m [39m [8D[1m[31me[1m[31mx[1m[31mi[m[39m[m[32me[m[32mx[m[32mi[32mt[39m>[?25l[?2004l[A[A[m[27m[24m[J[m[49m[27m[24m[38;5;76m❯[m[38;5;76m[49m[39m[27m[24m [32mexit[39m[K[?12l[?25h
+]2;exit]1;exit
+Script done on 2021-05-20 00:51:11+10:00 [COMMAND_EXIT_CODE="0"]
