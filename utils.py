@@ -27,3 +27,15 @@ class Formatting:
 
 def capitalise_str(string):
     return " ".join([word.capitalize() for word in string.split(" ")])
+
+def prompt(message) -> str:
+    # trim whitespace from ends
+    message = message.strip()
+
+    # Add ':' if missing
+    if message[-1] != ':':
+        message += ':'
+
+    message += ' '
+
+    return input(Formatting.format(message, Formatting.BOLD))

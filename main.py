@@ -6,8 +6,7 @@ Name, Author, Version, Description
 
 from cmd import Cmd
 
-from utils import Formatting, capitalise_str
-from prompt import prompt
+from utils import Formatting, capitalise_str, prompt
 from tuple import TupleGen, TupleStore
 
 NAME = "Modeler"

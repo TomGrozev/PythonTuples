@@ -1,5 +1,4 @@
-from prompt import prompt
-from utils import Formatting
+from utils import Formatting, prompt
 
 
 def print_tuple(object, in_tuple):
