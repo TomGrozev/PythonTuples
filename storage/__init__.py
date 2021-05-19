@@ -22,7 +22,7 @@ class Store(list):
             print(Formatting.error("Storage Empty. Add an item using the 'add' command."))
             return
 
-        print(Formatting.title("--------[ Printing %s ]--------" % self.type))
+        print(Formatting.title("--------[ Printing %s Items ]--------" % self.type))
         for t in self:
             print_model(self.__singular__(t))
         print(Formatting.title("-----------------------------------"))
