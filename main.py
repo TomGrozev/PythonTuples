@@ -179,6 +179,25 @@ class CmdPrompt(Cmd):
         """
         self.store.print()
 
+    def do_clear(self, _user_input):
+        """
+        Clears the store.
+
+        Must have a model set.
+
+        Arguments
+            None
+
+        Examples
+            > clear
+            Store Cleared.
+        """
+        if not self.__has_model():
+            return
+
+        self.store = store_class(object=self.store.object)
+        print(Formatting.format("Store cleared.", [Formatting.BOLD, Formatting.GREEN]))
+
     def do_search(self, user_input):
         """
         Searches for items with query.
@@ -232,7 +251,7 @@ class CmdPrompt(Cmd):
 if __name__ == '__main__':
     while True:
         print("How would you like to store models? (1) Tuples or (2) Classes")
-        choice = input("Storage Method: ")
+        choice = prompt("Storage Method")
         if choice == '1':
             store_class = TupleStore
             gen_class = TupleGen
