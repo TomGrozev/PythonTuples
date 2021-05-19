@@ -5,7 +5,6 @@ class TupleStore(Store):
     type = 'Tuple'
 
     def __search_comparator__(self, item, query):
-        query = query.lower()
         for attr in item:
             if attr.lower().startswith(query):
                 return True

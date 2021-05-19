@@ -9,6 +9,7 @@ class Store(list):
         self.object = object
 
     def search(self, query):
+        query = query.lower()
         return self.__class__(self.object, filter(lambda item: self.__search_comparator__(item, query), self))
 
     def print(self):
