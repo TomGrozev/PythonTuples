@@ -6,7 +6,7 @@ class ClassStore(Store):
 
     def __search_comparator__(self, item, query):
         for v in item.__dict__.values():
-            if v.lower().startswith(query):
+            if v.__str__().lower().startswith(query):
                 return True
         return False
 
