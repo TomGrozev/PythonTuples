@@ -25,4 +25,4 @@ class Store(list):
         return item == query
 
     def __singular__(self, item):
-        return item
+        return item.__str__()
